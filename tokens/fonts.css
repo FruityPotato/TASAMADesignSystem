@@ -1,0 +1,11 @@
+/* TASAMA — Webfonts
+   Core typeface is Montserrat (theme major/minor font in the source deck).
+   Montserrat ships on Google Fonts, so it is loaded from there.
+
+   NOTE — substitutions flagged to the user:
+   • The TASAMA wordmark uses a proprietary display face ("Fund" / custom).
+     It is NOT redistributable and is represented by the logo art in /assets.
+     For display headings we use Montserrat SemiBold/Bold as the nearest match.
+   • Arabic content uses "Montserrat Arabic" (proprietary). Supply the file to
+     enable Arabic; the closest open fallback is "Noto Kufi Arabic" (loaded). */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');

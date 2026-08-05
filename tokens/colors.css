@@ -1,0 +1,100 @@
+/* TASAMA — Color tokens
+   Derived from the TASAMA (A PIF Company) brand palette.
+   Primary is the deep royal "TASAMA Blue" #10069E. */
+:root {
+  /* ---- Brand core ---- */
+  --tasama-blue: #10069E;      /* primary — royal/indigo blue */
+  --tasama-gold: #B59D5E;      /* warm accent — muted gold */
+  --tasama-sky: #8DC7E8;       /* light supporting blue */
+  --tasama-orange: #E77622;    /* energetic accent */
+  --tasama-green: #ADDC91;     /* soft success/positive */
+  --tasama-ink: #000000;       /* pure black accent */
+  --tasama-white: #FEFFFE;     /* off-white paper */
+
+  /* ---- Blue ramp (primary) ---- */
+  --blue-900: #0A0468;
+  --blue-800: #0D0582;
+  --blue-700: #10069E;   /* = --tasama-blue */
+  --blue-600: #2A21B4;
+  --blue-500: #4A42C6;
+  --blue-400: #7A74D6;
+  --blue-300: #ADA9E6;
+  --blue-200: #D5D3F2;
+  --blue-100: #EBEAF9;
+  --blue-050: #F5F5FC;
+
+  /* ---- Gold ramp ---- */
+  --gold-700: #8C7742;
+  --gold-500: #B59D5E;   /* = --tasama-gold */
+  --gold-300: #D3C296;
+  --gold-100: #EFE9D8;
+
+  /* ---- Sky ramp ---- */
+  --sky-600: #4E9BC9;
+  --sky-400: #8DC7E8;    /* = --tasama-sky */
+  --sky-200: #C4E3F4;
+  --sky-100: #E5F2FA;
+
+  /* ---- Orange ramp ---- */
+  --orange-600: #C25A11;
+  --orange-500: #E77622; /* = --tasama-orange */
+  --orange-300: #F2A968;
+  --orange-100: #FBE6D3;
+
+  /* ---- Green ramp ---- */
+  --green-600: #6FAE4E;
+  --green-400: #ADDC91;  /* = --tasama-green */
+  --green-200: #D3EDC4;
+  --green-100: #ECF7E4;
+
+  /* ---- Neutral (cool grey, tuned toward the blue) ---- */
+  --neutral-950: #0B0B14;
+  --neutral-900: #16161F;
+  --neutral-800: #2A2A36;
+  --neutral-700: #43434F;
+  --neutral-600: #5E5E6B;
+  --neutral-500: #7C7C88;
+  --neutral-400: #9C9CA7;
+  --neutral-300: #C2C2CB;
+  --neutral-200: #DEDEE4;
+  --neutral-150: #E9E9EE;
+  --neutral-100: #F2F2F5;
+  --neutral-050: #F8F8FA;
+
+  /* ---- Semantic: text ---- */
+  --text-strong: var(--tasama-blue);      /* headings on light */
+  --text-body: var(--neutral-800);        /* default body */
+  --text-muted: var(--neutral-500);       /* secondary / captions */
+  --text-inverse: var(--tasama-white);    /* on dark blue */
+  --text-inverse-muted: #B9B6E8;          /* muted on dark blue */
+  --text-link: var(--tasama-blue);
+  --text-on-accent: var(--tasama-white);
+
+  /* ---- Semantic: surface ---- */
+  --surface-page: var(--tasama-white);
+  --surface-card: #FFFFFF;
+  --surface-subtle: var(--neutral-050);
+  --surface-sunken: var(--neutral-100);
+  --surface-brand: var(--tasama-blue);    /* dark blue hero surface */
+  --surface-brand-deep: var(--blue-900);
+  --surface-tint: var(--blue-050);
+
+  /* ---- Semantic: border ---- */
+  --border-subtle: var(--neutral-200);
+  --border-default: var(--neutral-300);
+  --border-strong: var(--neutral-400);
+  --border-brand: var(--tasama-blue);
+  --border-on-brand: rgba(254,255,254,0.22);
+
+  /* ---- Semantic: status ---- */
+  --status-success: var(--green-600);
+  --status-success-surface: var(--green-100);
+  --status-warning: var(--orange-500);
+  --status-warning-surface: var(--orange-100);
+  --status-info: var(--sky-600);
+  --status-info-surface: var(--sky-100);
+
+  /* ---- Interaction (focus ring, overlays) ---- */
+  --focus-ring: rgba(16,6,158,0.35);
+  --overlay-scrim: rgba(10,4,104,0.55);
+}

@@ -1,0 +1,12 @@
+{
+  "name": "TASAMA Design System Builder",
+  "id": "tasama-design-system-builder",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"],
+  "networkAccess": {
+    "allowedDomains": ["none"],
+    "reasoning": "Runs fully offline. All token values and icon geometry are baked into code.js."
+  }
+}

@@ -1,0 +1,44 @@
+/* TASAMA — Typography tokens
+   Type system built on Montserrat. Display/headings lean on the heavier
+   SemiBold/Bold weights (mirrors the deck's "Montserrat SemiBold" major font);
+   body copy is regular Montserrat. */
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Montserrat', 'Helvetica Neue', Arial, sans-serif; /* headings — use 600/700 */
+  --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;    /* body — 400/500 */
+  --font-arabic: 'Noto Kufi Arabic', 'Montserrat', sans-serif;       /* RTL / Arabic */
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* ---- Weights ---- */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* ---- Fluid display / heading scale (1.250 major-third-ish) ---- */
+  --text-display: 3.75rem;   /* 60px — hero / cover titles */
+  --text-h1: 2.75rem;        /* 44px */
+  --text-h2: 2.125rem;       /* 34px */
+  --text-h3: 1.5rem;         /* 24px */
+  --text-h4: 1.25rem;        /* 20px */
+  --text-title: 1.0625rem;   /* 17px — card / component titles */
+  --text-body-lg: 1.125rem;  /* 18px */
+  --text-body-md: 1rem;      /* 16px — default */
+  --text-body-sm: 0.875rem;  /* 14px */
+  --text-caption: 0.75rem;   /* 12px */
+  --text-overline: 0.6875rem;/* 11px — eyebrow / label */
+
+  /* ---- Line heights ---- */
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* ---- Letter spacing ---- */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-overline: 0.16em;  /* eyebrows / section kickers are wide-tracked uppercase */
+}

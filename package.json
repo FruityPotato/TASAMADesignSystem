@@ -1,0 +1,35 @@
+{
+  "name": "tasama-design-system",
+  "version": "1.0.0",
+  "description": "Brand and UI design system for TASAMA (a PIF company) — tokens, React components, brand icons, and a Figma builder plugin.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FruityPotato/TASAMADesignSystem.git"
+  },
+  "main": "styles.css",
+  "files": [
+    "styles.css",
+    "tokens/",
+    "components/",
+    "assets/"
+  ],
+  "scripts": {
+    "gen:assets": "node scripts/gen-svg-assets.js",
+    "figma:build": "node figma-plugin/build.js",
+    "figma:test": "node figma-plugin/test/run.js",
+    "test": "node figma-plugin/build.js && node figma-plugin/test/run.js"
+  },
+  "peerDependencies": {
+    "react": ">=17"
+  },
+  "keywords": [
+    "design-system",
+    "tasama",
+    "pif",
+    "design-tokens",
+    "figma"
+  ]
+}

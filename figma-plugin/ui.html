@@ -1,0 +1,86 @@
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 16px;
+    font-family: Inter, -apple-system, "Segoe UI", sans-serif;
+    font-size: 12px; color: #2A2A36; background: #FEFFFE;
+  }
+  h1 { font-size: 13px; margin: 0 0 2px; color: #10069E; letter-spacing: -0.01em; }
+  .sub { color: #7C7C88; margin: 0 0 14px; font-size: 11px; }
+  fieldset { border: 1px solid #DEDEE4; border-radius: 6px; padding: 10px 12px; margin: 0 0 12px; }
+  legend { font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: #B59D5E; font-weight: 600; padding: 0 4px; }
+  label { display: flex; align-items: center; gap: 8px; padding: 3px 0; cursor: pointer; }
+  label span { user-select: none; }
+  button {
+    width: 100%; height: 34px; border: 0; border-radius: 6px;
+    background: #10069E; color: #FEFFFE; font-weight: 600; font-size: 12px;
+    font-family: inherit; cursor: pointer;
+  }
+  button:hover { background: #0D0582; }
+  button:disabled { opacity: 0.45; cursor: not-allowed; }
+  #log {
+    margin-top: 12px; font-size: 11px; color: #5E5E6B; line-height: 1.5;
+    max-height: 130px; overflow-y: auto; white-space: pre-wrap;
+  }
+  #log .err { color: #C25A11; }
+  .bar { height: 3px; background: #EBEAF9; border-radius: 999px; overflow: hidden; margin-top: 10px; }
+  .bar > i { display: block; height: 100%; width: 0%; background: #10069E; transition: width 160ms ease; }
+</style>
+
+<h1>TASAMA Design System</h1>
+<p class="sub">Builds variables, styles, icons and components into this file.</p>
+
+<fieldset>
+  <legend>Foundations</legend>
+  <label><input type="checkbox" id="variables" checked><span>Color &amp; scale variables</span></label>
+  <label><input type="checkbox" id="textStyles" checked><span>Text styles</span></label>
+  <label><input type="checkbox" id="effectStyles" checked><span>Elevation &amp; gradient styles</span></label>
+</fieldset>
+
+<fieldset>
+  <legend>Library</legend>
+  <label><input type="checkbox" id="icons" checked><span>Icon components (24)</span></label>
+  <label><input type="checkbox" id="components" checked><span>UI components</span></label>
+  <label><input type="checkbox" id="docs" checked><span>Foundations documentation page</span></label>
+</fieldset>
+
+<button id="run">Build design system</button>
+<div class="bar"><i id="barFill"></i></div>
+<div id="log"></div>
+
+<script>
+  const log = document.getElementById('log');
+  const barFill = document.getElementById('barFill');
+  const runBtn = document.getElementById('run');
+  const KEYS = ['variables', 'textStyles', 'effectStyles', 'icons', 'components', 'docs'];
+
+  runBtn.onclick = () => {
+    const opts = {};
+    KEYS.forEach(k => { opts[k] = document.getElementById(k).checked; });
+    log.textContent = '';
+    barFill.style.width = '0%';
+    runBtn.disabled = true;
+    parent.postMessage({ pluginMessage: { type: 'run', opts } }, '*');
+  };
+
+  onmessage = (event) => {
+    const msg = event.data.pluginMessage;
+    if (!msg) return;
+    if (msg.type === 'progress') {
+      barFill.style.width = Math.round(msg.pct) + '%';
+      const line = document.createElement('div');
+      line.textContent = msg.text;
+      log.appendChild(line);
+      log.scrollTop = log.scrollHeight;
+    }
+    if (msg.type === 'done' || msg.type === 'error') {
+      runBtn.disabled = false;
+      barFill.style.width = '100%';
+      const line = document.createElement('div');
+      if (msg.type === 'error') line.className = 'err';
+      line.textContent = msg.text;
+      log.appendChild(line);
+      log.scrollTop = log.scrollHeight;
+    }
+  };
+</script>
